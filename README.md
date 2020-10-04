@@ -37,8 +37,13 @@ trying to loop the hours without building a whole array having an issue right no
 
 requested assistance on the local storage issue.  if unable to solve will default to individually pulling/
 
+---------------
 
+styling
+----------
 My error was in using "hour" instead of "#" to pull the class ID and not spacing the " .description" correctly as that interfered with the styling/
+
+updated colour styling and added a photo I've taken (rights owned by me) and used it as an asthetic piece  to the background
 
 
 
