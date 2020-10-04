@@ -34,3 +34,15 @@ interval  update/
 
 
 trying to loop the hours without building a whole array having an issue right now/
+
+requested assistance on the local storage issue.  if unable to solve will default to individually pulling/
+
+
+
+------------------
+
+site locaiton: https://steventraboulay.github.io/WorkSchedManager.github.io/
+
+Git repository: https://github.com/StevenTraboulay/WorkSchedManager.github.io
+
+------
