@@ -1,51 +1,48 @@
-$(document).ready(function(){
-
-    //watching save buttonc licks
- $(".saveBtn").on("click", function(){
+$(document).ready(function () {
+  //watching save buttonc licks
+  $(".saveBtn").on("click", function () {
     //get nearby values
-    var value = $(this).siblings("description").val();
-    var time =  $(this).parent().attr("id");
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
 
     //local storage
-    localStorage.setItem(time,value);
-});
+    localStorage.setItem(time, value);
+  });
 
-function hourUpdater() {
+  function hourUpdater() {
+    //current hours  numbers
+    var currentHour = moment().hours();
 
-//current hours  numbers
-var currentHour = moment().hours();
+    //time blocks looped in
+    $(".time-block").each(function () {
+      var blockHour = parseInt($(this).attr("id").split("-")[1]);
 
-//time blocks looped in
-$(".time-block").each(function() {
-    var blockHour   = parseInt($(this).attr("id").split("-")[1]);
-
-
-    //verifying time moving
-    if (blockHour < currentHour){
+      //verifying time moving
+      if (blockHour < currentHour) {
         $(this).addClass("past");
-    }
-    else if (blockHour === currentHour){
+      } else if (blockHour === currentHour) {
         $(this).removeClass("past");
         $(this).addClass("present");
-    }
-    else {
+      } else {
         $(this).removeClass("past");
         $(this).removeClass("present");
         $(this).addClass("future");
-        }
+      }
     });
-}
+  }
 
-hourUpdater();
+  hourUpdater();
 
-//interval for time to update
-var interval = setInterval( hourUpdater, 13000);
+  //interval for time to update
+  var interval = setInterval(hourUpdater, 13000);
 
+  //load in save data loop
 
+  $(".time-block").each(function () {
+    var blockHour = $(this).attr("id");
+    $("-" + blockHour + ".description").val(localStorage.getItem(blockHour));
+  });
 
-//load in save data loop
-
-
-
-
+  //display day
+  $("#currentDay").text(moment().format("dddd, MMM Do"));
 });
