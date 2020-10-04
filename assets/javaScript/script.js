@@ -40,7 +40,7 @@ $(document).ready(function () {
 
   $(".time-block").each(function () {
     var blockHour = $(this).attr("id");
-    $("hour" + blockHour + ".description").val(localStorage.getItem(blockHour));
+    $("#" + blockHour + " .description").val(localStorage.getItem(blockHour));
   });
 
   //display day
